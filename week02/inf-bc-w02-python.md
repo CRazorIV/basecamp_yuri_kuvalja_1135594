@@ -18,7 +18,6 @@ The activities are designed based on these following references:
 
 ## Path:
 
-
 Follow these steps:
 
 ### Step-01: Set Up

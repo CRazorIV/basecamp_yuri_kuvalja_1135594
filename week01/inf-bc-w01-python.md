@@ -53,6 +53,9 @@ print("This is your list of words:", words)
 #### Exercises:
 
 1. Make a small research to understand the meaning of *syntax in programming*. Give three examples of the programs you have read in **BRef-01: Chapter 01**.
+
+Syntax is the set of rules that determines how code needs to be written so python can understand and run it correctly. It's a bit like grammar in a language: a sentence needs the right structure to make sense, and code needs the right structure to run. If the syntax is wrong it will refuse to run the code. Just like in math where a wrong formula equals a error. Examples from the book introducing python modern computing in simple packages.  
+
 2. Take each of the given following Python programs and carry out these steps:
 	- Write down syntactical elements that are understandable for you.
 	- Specify statements that you know (or you can guess) the results of the their execution.
@@ -71,7 +74,25 @@ print(a)
 print(b)
 # what will be printed here?
 ```
-	
+we start of with this:
+a = 16
+b = 12
+
+from there b gets the value of a (16)
+b is now 16
+a gets changed to 22 
+
+we print both the values
+
+Output:
+```python
+22
+16
+```
+
+I see variables, prints to the console and numbers being used here. 
+I understand how this syntax works in python. 
+
 ```python
 #Code 03
 num = int(input("Enter a number: "))
@@ -84,12 +105,29 @@ else:
        num -= 1
    print("Result is", sum)
 ```
+
+In this program we have 2 outcomes:
+
+Happy flow: We enter a positive number => while the num is bigger than 0 we add the sum on top of the number in this case the sum is 0 as
+defined on line 101. on every iteration the current value of the num gets added up to the sum => the num gets incremented down by steps of 1 until the while loop breaks itself and the sum is printed as the result.
+
+Sad flow: We enter a negative number we enter the if statement and get the output "enter a positive number"
+
+For the syntax I see the use of if else statements, while loop, prints, arithmetic operations using the += -= assignment operators, type conversion in the userinput making it a interger value. 
+
+I understand these syntactic rules in python. 
 	
 ```python
 #Code 04
 import random
 print(random.randint(0, 9))
 ```
+In this program a random number from 0 to 9 can be printed to the console. 
+
+The import is being used here at the top of the file to specify the random module being used in this file. 
+Without this import we cannot use the random module. 
+
+I understand how importing elements from other files and utilizing them in my current environment works in python.
 	
 ```python
 #Code 05
@@ -100,10 +138,17 @@ print("The sorted words are:")
 for word in words:
 	print(word)
 ```
+I see the use of list comprehension a technique in python to quickly perform operations in a list itself.
 
+The user inputs a string which will be splitted into a list with .split() and is then modified to be lowercased for every element in that list. 
+
+The sort method sorts words ascending from the alphabet by default (A-Z)
+
+Then we print every word to the console as seen in the for loop. 
 
 3. Using **OPyEditor** try to execute the given programs. Does the output of the programs match your expectations?
 
+Yes they did match my expectations as I have listed here above underneath the code snippets. 
 
 <hr>
 
@@ -157,15 +202,94 @@ print(x)
 print(y)
 print(z)
 ```
+
+To understand this we focus on the first 3 lines of the program so we know what value we start with:
+```python
+x = 12
+y = 15
+z = 1
+```
+from there we can continue line by line like the interperter does. 
+y gets assigned the current value of z which is 1 so y is now actually z which is 1 so to yot this down i do 
+y = 1 (keep this mentally noted)
+z = 12
+y = 13
+
+x = 1
+y = 1 
+z = 7 
+
+Output:
+```python
+x = 1
+y = 1
+z = 7
+```
+
 2. A phone number is a number. Yet we would want to save it as a text. Can you think of a reason why?
+
+The reason why a phone number is stored as a string object is because of the special characters that are appended with a phone number
+take (+31) country codes for example + cannot be stored as a interger theirfore it must be saved as a string. 
+
 3. The number in the address of your house, for example Kerkweg **8**, is a number. Yet we would want to save it as a text. Can you think of a reason why?
+
 4. What is an example from a number we use in the real world that we want to save as a number in Python, not as a text.
+
+Age is a good value to store in a interger format not only specificly in python for that matter. It is always a round number without decimals. 
+
 5. User input in Python is always considered a text, even if we just enter numbers, why would it act like this?
+
+There is no way for Python to know in advance whether what you type is meant to be a number or anything else from the interpreter sees everything the user types as a raw sequence of characters until it's told otherwise. So input() always hands back a string no matter what was typed.
+
 6. Define a variable called zipcode (postcode) and give it the value of your own zipcode. Print it using print().
+
+```python
+zipcode = "2991EH" 
+print(zipcode)
+```
+
 7. Define a variable called favorite_food, give it the value "Pizza". Print it. Change the value to "Roti". Print it. 
-8. Define a variable that stores your school email address. Extract your student number from this email address. 
+
+```python
+favorite_food = "Pizza" 
+print(favorite_food)
+favorite_food = "Roti"
+print(favorite_food)
+```
+
+8. Define a variable that stores your school email address. Extract your student number from this email address.
+
+```python
+school_email = "1135594@hr.nl"
+at_index = school_email.find("@")
+student_number = school_email[:at_index]
+print(student_number)
+```
+
 9. Write down the complete alphabet in a variable. Split it halfway over two different variables. Join them back together in the wrong order and print it. 
+
+```python
+
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+half = len(alphabet) // 2     
+first_half = alphabet[:half]   
+second_half = alphabet[half:]  
+
+wrong_order = second_half + first_half
+print(wrong_order)
+
+```
+
 10. Explain in your own words with an ```f``` string is?
+
+fstring allows you to embed variables and expressions in a string. 
+
+```python
+age_output = f"your age is: {age}" 
+print(age_output)
+```
+
 11. Finish all the exercises listed in **BRef-01-Chapter 02: Things to Do** and Practice the exercises listed in **BRef-01-Chapter 05: Things to Do**.
 
 <hr>

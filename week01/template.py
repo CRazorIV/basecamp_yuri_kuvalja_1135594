@@ -12,8 +12,6 @@
 # Outputs
 # First, list all of the outputs, then convert it to Python code.
 
-
-
 ## EXERCISE 1 - RECTANGLE
 # Calculate and print the area of a rectangle
 # for width and length given by the user.
@@ -29,8 +27,6 @@ area = width_int * length_int
 
 # Outputs
 print("The area of rectangle is:", area)
-
-
 
 ## EXERCISE 2 - PERIMETER
 # Calculate and print the area and perimeter of a rectangle
@@ -51,10 +47,6 @@ print("The area of rectangle is:", area)
 print("The perimeter of rectangle is:", perimeter)
 
 
-
-
-
-
 ## EXERCISE 3 - MIDDLE DIGIT
 # Ask user to input three digit number.
 # Then, print out the digit in the middle.
@@ -65,10 +57,14 @@ print("The perimeter of rectangle is:", perimeter)
 
 # Inputs
 # X Ask user to input three digit number (you can call variable N or number)
+n = int(input("input a three digit number: \n"))
 
 # Processing
 # X Using division and/or remainder and/or modulo extract the middle digit ...
 #   ... and assign it to variable D or digit (or any other name of your choice)
 
+d = (n // 10) % 10
+
 # Outputs
 # X Print digit (D).
+print(d)

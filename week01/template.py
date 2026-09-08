@@ -55,16 +55,22 @@ print("The perimeter of rectangle is:", perimeter)
 # Only hints are given in comments.
 # Replace lines marked by X with actual Python code
 
-# Inputs
+#region Inputs
 # X Ask user to input three digit number (you can call variable N or number)
+
 n = int(input("input a three digit number: \n"))
 
-# Processing
+#endregion
+
+#region Processing
 # X Using division and/or remainder and/or modulo extract the middle digit ...
 #   ... and assign it to variable D or digit (or any other name of your choice)
 
 d = (n // 10) % 10
 
-# Outputs
+#endregion 
+
+#region Outputs
 # X Print digit (D).
 print(d)
+#endregion 

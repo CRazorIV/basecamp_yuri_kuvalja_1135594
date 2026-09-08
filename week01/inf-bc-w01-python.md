@@ -35,9 +35,8 @@ After taking this step, you will be able to:
    1. What is a general definition of a program? Provide some (non-computer) examples.
    2. What are the main elements of a (Python) program?
    3. How Python runs programs?
-   4. **First Taste of Python**: Read section *Little Programs* and analyze the provided examples.
-   5. Consider the following Python programs and guess what each program does. Analyze and discuss inputs, behaviour and expected outputs.
-   		- *Note*: Certainly there are lines that you won't understand. The goal is to evaluate your first taste of Python programs and check how intuitive they are. You will be learning all details in later stages.
+   4. **First Taste of Python**: Read section _Little Programs_ and analyze the provided examples.
+   5. Consider the following Python programs and guess what each program does. Analyze and discuss inputs, behaviour and expected outputs. - _Note_: Certainly there are lines that you won't understand. The goal is to evaluate your first taste of Python programs and check how intuitive they are. You will be learning all details in later stages.
 
 ```python
 #Code 01:
@@ -52,17 +51,85 @@ print("This is your list of words:", words)
 
 #### Exercises:
 
-1. Make a small research to understand the meaning of *syntax in programming*. Give three examples of the programs you have read in **BRef-01: Chapter 01**.
+1. Make a small research to understand the meaning of _syntax in programming_. Give three examples of the programs you have read in **BRef-01: Chapter 01**.
 
-Syntax is the set of rules that determines how code needs to be written so python can understand and run it correctly. It's a bit like grammar in a language: a sentence needs the right structure to make sense, and code needs the right structure to run. If the syntax is wrong it will refuse to run the code. Just like in math where a wrong formula equals a error. Examples from the book introducing python modern computing in simple packages.  
+Syntax is the set of rules that determines how code needs to be written so python can understand and run it correctly. It's a bit like grammar in a language: a sentence needs the right structure to make sense, and code needs the right structure to run. If the syntax is wrong it will refuse to run the code. Just like in math where a wrong formula equals a error. Examples from the book introducing python modern computing in simple packages.
+
+Let's take some coding examples from the book. We can see a lot of python syntax.
+
+Example 1-1
+
+```python
+for countdown in 5,4,3,2,1, "hey!":
+   print(countdown)
+```
+
+In example 1-1 we already can see a lot of python syntax like loops, functions and keywords that are all parts of the python syntax.
+This structure allows programmers to easily read and write code based on these rules. Sometimes syntax can look weird but with documentation and repetition this can be cleared up. If we look at example 1-2 we can also see more python syntax in the form of collections.
+
+Example 1-2
+
+```python
+spells = [
+"Riddikulus!",
+"Wingardium Leviosa!",
+"Avada Kedavra!",
+"Expecto Patronum!",
+"Nox!",
+"Lumos!",
+]
+print(spells[3])
+```
+
+The individual spells are Python strings (sequences of text characters,
+enclosed in quotes). They’re separated by commas and enclosed in a Python
+list that’s defined by enclosing square brackets ([ and ]). The word spells
+is a variable that gives the list a name so that we can do things with it. In
+this case, the program would print the fourth spell:
+
+```bash
+Expecto Patronum!
+```
+
+For the final example we will look at the example 1-3
+
+Example 1-3
+
+```python
+Example 1-3. quotes.py
+quotes = {
+"Moe": "A wise guy, huh?",
+"Larry": "Ow!",
+"Curly": "Nyuk nyuk!",
+}
+stooge = "Curly"
+print(stooge, "says:", quotes[stooge])
+```
+
+If you were to run this little program, it would print the following:
+
+```bash
+Curly says: Nyuk nyuk!
+```
+
+quotes is a variable that names a Python dictionary—a collection of unique
+keys (in this example, the name of the Stooge) and associated values (here,
+a notable saying of that Stooge). Using a dictionary, you can store and look
+up things by name, which is often a useful alternative to a list.
+The spells example used square brackets ([ and ]) to make a Python list,
+and the quotes example uses curly brackets ({ and }, which are no relation
+to Curly), to make a Python dictionary. Also, a colon (:) is used to associate
+each key in the dictionary with its value.
+
+<b>Sources: <i>Introducing Python Modern Computing in Simple Packages by Bill Lubanovic ch-01</i></b>
 
 2. Take each of the given following Python programs and carry out these steps:
-	- Write down syntactical elements that are understandable for you.
-	- Specify statements that you know (or you can guess) the results of the their execution.
-	- Share your lists within your learning group.
-	- Discuss what will be the result / output of the program (without execution).
+   - Write down syntactical elements that are understandable for you.
+   - Specify statements that you know (or you can guess) the results of the their execution.
+   - Share your lists within your learning group.
+   - Discuss what will be the result / output of the program (without execution).
 
-*Note*: It is not expected that students understand all the elements of these programs. The main goal is to get a taste of Python programs and discuss about them. *Trust your intuition*.
+_Note_: It is not expected that students understand all the elements of these programs. The main goal is to get a taste of Python programs and discuss about them. _Trust your intuition_.
 
 ```python
 #Code 02f
@@ -74,24 +141,26 @@ print(a)
 print(b)
 # what will be printed here?
 ```
+
 we start of with this:
 a = 16
 b = 12
 
 from there b gets the value of a (16)
 b is now 16
-a gets changed to 22 
+a gets changed to 22
 
 we print both the values
 
 Output:
+
 ```python
 22
 16
 ```
 
-I see variables, prints to the console and numbers being used here. 
-I understand how this syntax works in python. 
+I see variables, prints to the console and numbers being used here.
+I understand how this syntax works in python.
 
 ```python
 #Code 03
@@ -113,22 +182,23 @@ defined on line 101. on every iteration the current value of the num gets added 
 
 Sad flow: We enter a negative number we enter the if statement and get the output "enter a positive number"
 
-For the syntax I see the use of if else statements, while loop, prints, arithmetic operations using the += -= assignment operators, type conversion in the userinput making it a interger value. 
+For the syntax I see the use of if else statements, while loop, prints, arithmetic operations using the += -= assignment operators, type conversion in the userinput making it a interger value.
 
-I understand these syntactic rules in python. 
-	
+I understand these syntactic rules in python.
+
 ```python
 #Code 04
 import random
 print(random.randint(0, 9))
 ```
-In this program a random number from 0 to 9 can be printed to the console. 
 
-The import is being used here at the top of the file to specify the random module being used in this file. 
-Without this import we cannot use the random module. 
+In this program a random number from 0 to 9 can be printed to the console.
+
+The import is being used here at the top of the file to specify the random module being used in this file.
+Without this import we cannot use the random module.
 
 I understand how importing elements from other files and utilizing them in my current environment works in python.
-	
+
 ```python
 #Code 05
 my_str = input("Enter a string: ")
@@ -138,17 +208,18 @@ print("The sorted words are:")
 for word in words:
 	print(word)
 ```
+
 I see the use of list comprehension a technique in python to quickly perform operations in a list itself.
 
-The user inputs a string which will be splitted into a list with .split() and is then modified to be lowercased for every element in that list. 
+The user inputs a string which will be splitted into a list with .split() and is then modified to be lowercased for every element in that list.
 
 The sort method sorts words ascending from the alphabet by default (A-Z)
 
-Then we print every word to the console as seen in the for loop. 
+Then we print every word to the console as seen in the for loop.
 
 3. Using **OPyEditor** try to execute the given programs. Does the output of the programs match your expectations?
 
-Yes they did match my expectations as I have listed here above underneath the code snippets. 
+Yes they did match my expectations as I have listed here above underneath the code snippets.
 
 <hr>
 
@@ -166,23 +237,21 @@ After taking this step, you will be able to:
 
 #### What to Learn?
 
-1. Using **BRef-01: Chapter 02** and **BRef-02: Chapter 04, Chapter 05** explore the answers for the following questions: 
-*Note: There are some concepts (like objects, classes, references) that students may not be able to grasp completely. The main idea is to try as much as possible. They will be more clear later when they learn Object Oriented programming in Python.*
+1. Using **BRef-01: Chapter 02** and **BRef-02: Chapter 04, Chapter 05** explore the answers for the following questions:
+   _Note: There are some concepts (like objects, classes, references) that students may not be able to grasp completely. The main idea is to try as much as possible. They will be more clear later when they learn Object Oriented programming in Python._
    1. What is a value? What is a variable?
-   2. What is a *type*? Provide five examples.
-   3. How can you define a variable in Python? 
+   2. What is a _type_? Provide five examples.
+   3. How can you define a variable in Python?
    4. Define some variables in Python that are not permitted in Python. Experiment with breaking various rules in defining variables. Analyse the error message.
    5. How can you assign a value to a variable? How can we express that two items are equal?
    6. How can you identify the type of a value / variable?
-   
-4. Using **BRef-01: Chapter 05** and **BRef-02: Chapter 07** discuss and experiment the following questions:
-   1. What are the character and text string types in Python? Make examples. 
+2. Using **BRef-01: Chapter 05** and **BRef-02: Chapter 07** discuss and experiment the following questions:
+   1. What are the character and text string types in Python? Make examples.
    2. How can you combine several strings? Implement an example.
    3. Can you multiply a number with a string? What is the result? Implement an example.
    4. How can you get the 5th character of a given string? How can you get the first character?
    5. How can you get a substring from a given string? For example, the zipcodes (postcodes) in The Netherlands consist of 4 digits followed by 2 letters. How can you extract the letters from a given zipcode?
-   6. You have learned how to print something as an output of your program. How can you read something as input? What is the *function*? What is the type?
-
+   6. You have learned how to print something as an output of your program. How can you read something as input? What is the _function_? What is the type?
 
 #### Exercises:
 
@@ -195,7 +264,7 @@ z = 1
 y = z
 z = 12
 y = 13
-x = y 
+x = y
 y = x
 z = 7
 print(x)
@@ -204,22 +273,25 @@ print(z)
 ```
 
 To understand this we focus on the first 3 lines of the program so we know what value we start with:
+
 ```python
 x = 12
 y = 15
 z = 1
 ```
-from there we can continue line by line like the interperter does. 
-y gets assigned the current value of z which is 1 so y is now actually z which is 1 so to yot this down i do 
+
+from there we can continue line by line like the interperter does.
+y gets assigned the current value of z which is 1 so y is now actually z which is 1 so to yot this down i do
 y = 1 (keep this mentally noted)
 z = 12
 y = 13
 
 x = 1
-y = 1 
-z = 7 
+y = 1
+z = 7
 
 Output:
+
 ```python
 x = 1
 y = 1
@@ -229,13 +301,15 @@ z = 7
 2. A phone number is a number. Yet we would want to save it as a text. Can you think of a reason why?
 
 The reason why a phone number is stored as a string object is because of the special characters that are appended with a phone number
-take (+31) country codes for example + cannot be stored as a interger theirfore it must be saved as a string. 
+take (+31) country codes for example + cannot be stored as a interger theirfore it must be saved as a string.
 
 3. The number in the address of your house, for example Kerkweg **8**, is a number. Yet we would want to save it as a text. Can you think of a reason why?
 
+Because kerkweg is a text and is saved in a text format. This is why we usually opt to store it in a string format. If you want the number to be extracted you could do that by processing the string and returning the numbers as output.
+
 4. What is an example from a number we use in the real world that we want to save as a number in Python, not as a text.
 
-Age is a good value to store in a interger format not only specificly in python for that matter. It is always a round number without decimals. 
+Age is a good value to store in a interger format not only specificly in python for that matter. It is always a round number without decimals.
 
 5. User input in Python is always considered a text, even if we just enter numbers, why would it act like this?
 
@@ -244,17 +318,21 @@ There is no way for Python to know in advance whether what you type is meant to 
 6. Define a variable called zipcode (postcode) and give it the value of your own zipcode. Print it using print().
 
 ```python
-zipcode = "2991EH" 
+zipcode = "2991EH"
 print(zipcode)
+
+# 1135594 | Yuri Kuvalja
 ```
 
-7. Define a variable called favorite_food, give it the value "Pizza". Print it. Change the value to "Roti". Print it. 
+7. Define a variable called favorite_food, give it the value "Pizza". Print it. Change the value to "Roti". Print it.
 
 ```python
-favorite_food = "Pizza" 
+favorite_food = "Pizza"
 print(favorite_food)
 favorite_food = "Roti"
 print(favorite_food)
+
+# 1135594 | Yuri Kuvalja
 ```
 
 8. Define a variable that stores your school email address. Extract your student number from this email address.
@@ -264,38 +342,108 @@ school_email = "1135594@hr.nl"
 at_index = school_email.find("@")
 student_number = school_email[:at_index]
 print(student_number)
+
+# 1135594 | Yuri Kuvalja
+# Sources: string slicing: https://www.w3schools.com/python/python_strings_slicing.asp ,
 ```
 
-9. Write down the complete alphabet in a variable. Split it halfway over two different variables. Join them back together in the wrong order and print it. 
+9. Write down the complete alphabet in a variable. Split it halfway over two different variables. Join them back together in the wrong order and print it.
 
 ```python
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-half = len(alphabet) // 2     
-first_half = alphabet[:half]   
-second_half = alphabet[half:]  
-
+# We get the entire length of the string with len() and devide the string into 2 parts.
+half = len(alphabet) // 2
+# Which we then assign each half to 2 variables using string slicing: first_half & second_half
+first_half = alphabet[:half]
+second_half = alphabet[half:]
+# Join the 2 variables in the wrong order
 wrong_order = second_half + first_half
+# Print the output to the console.
 print(wrong_order)
+
+# 1135594 | Yuri Kuvalja
+# Sources: len functie: https://docs.python.org/3/library/functions.html#len , string slicing: https://www.w3schools.com/python/python_strings_slicing.asp
 
 ```
 
-10. Explain in your own words with an ```f``` string is?
+10. Explain in your own words with an `f` string is?
 
-fstring allows you to embed variables and expressions in a string. 
+fstring allows you to embed variables and expressions into a string.
 
 ```python
-age_output = f"your age is: {age}" 
+age_output = f"your age is: {age}"
 print(age_output)
 ```
 
 11. Finish all the exercises listed in **BRef-01-Chapter 02: Things to Do** and Practice the exercises listed in **BRef-01-Chapter 05: Things to Do**.
 
+```python
+a = [2, 4, 6]
+b = a
+print(a)
+print(b)
+a[0] = 99
+print(a)
+```
+
+2.1 Assign the integer value 99 to the variable prince, and print it.
+
+```python
+prince = 99
+print(prince)
+```
+
+output:
+
+```bash
+99
+```
+
+2.2 What type is the value 5?
+
+```python
+print(type(5))
+```
+
+output:
+
+```bash
+<class 'int'>
+```
+
+2.3 What type is the value 2.0?
+
+```python
+print(type(2.0))
+```
+
+output:
+
+```bash
+<class 'float'>
+```
+
+2.4 What type is the expression 5 + 2.0?
+
+```python
+a = 5 + 2.0
+print(type(a))
+```
+
+output:
+
+```bash
+<class 'float'>
+```
+
 <hr>
 
 ### Step-03: How to Calculate?
+
 #### Goals:
+
 ```
 After taking this step, you will be able to:
 	1. understand the main arithmetic operations in Python.
@@ -303,12 +451,13 @@ After taking this step, you will be able to:
 	3. convert one primitive data type to another using functions: int(), float(), str(), bool().
 	4. implement Python programs containing: input from the user, type conversion, calculation, printing.
 ```
+
 #### What to Learn?
 
 1. Using **BRef-01: Chapter 03** and **BRef-02: Chapter 05**answer the following questions:
    1. Name basic built-in data types in Python. Use examples.
    2. What are the basic arithmetic operations? Make a list with the meaning (semantics) of each operation.
-   3. Why is *precedence* an important concept? Make examples.
+   3. Why is _precedence_ an important concept? Make examples.
    4. How can you convert one data type to another? Name basic built-in functions.
 
 #### Exercises:
@@ -317,14 +466,81 @@ After taking this step, you will be able to:
 2. Do the same for subtraction, division and multiplication.
 3. Get input from the user. Save it as a number. Print it.
 4. Try to divide something by zero. Describe the error you get.
+
+I got a ZeroDivisionError.
+
+```bash
+ZeroDivisionError: division by zero
+```
+
 5. Create two variables with text in them. Print them togeter at once, using only 1 print statement.
 6. Python uses PEMDAS. What is that and is it different from the way you learned it?
+
+PEMDAS is the order of operation in math P stands for parentheses () E stands for exponents \*_ M for multiplication _ D for devision / A for addition + S for subtraction -
+
 7. Create one calculation using at least four parentheses, three multiplications and four subtractions. Print the result.
+
+My code:
+
+```python
+value1 = 22
+value2 = 2
+print(value1 * value2)
+
+value1 = 22
+value2 = 10
+print(value1 / value2)
+
+value1 = 22
+value2 = 22
+print(value1 + value2)
+
+value1 = 22
+value2 = 22
+print(value1 - value2)
+
+number = int(input("provide a interger number: "))
+
+print(number)
+
+# print(0/0)
+
+first_name = "Yuri"
+last_name = "kuvalja"
+
+print(first_name, last_name)
+
+result = ((10 - 2) * (3 - 1)) * ((5 - 2) * (4 - 1)) - (20 - 5)
+print(result)
+```
+
 8. Finish all the exercises listed in **BRef-01-Chapter 03: Things to Do**.
 
+```python
+# 3.1
+60 * 60
+# 3600
+
+# 3.2
+seconds_per_hour = 60 * 60
+
+# 3.3
+seconds_per_hour * 24
+# 86400
+
+# 3.4
+seconds_per_day = seconds_per_hour * 24
+
+# 3.5
+seconds_per_day / seconds_per_hour
+# 24.0
+
+# 3.6
+seconds_per_day // seconds_per_hour
+# 24
+```
 
 ## Code Analysis
-
 
 1. Analyze the programming solutions given below and write down in one sentence: what do they do? What problems do they try to solve?
 
@@ -357,9 +573,13 @@ dig = num % 10
 print(dig)
 ```
 
-2. Implementing a solution for a given problem is challenging for a starting programmer. It is helpful to have a guideline with some steps. Check [this guideline](./checklist_metacog.pdf) and apply it the Problem 5 of this week. *Hint: A template with some examples provided [here](./template.py)*
+Code Analysis 1: The program swaps the values of A and B.
 
-3.  One of the students has tried to apply the guideline for a given problem. But, the code does not produce the expected results. Check the code and without executing the code try to find the mistake.
+Code Analysis 2: The program finds and prints the last digit of a number.
+
+2. Implementing a solution for a given problem is challenging for a starting programmer. It is helpful to have a guideline with some steps. Check [this guideline](./checklist_metacog.pdf) and apply it the Problem 5 of this week. _Hint: A template with some examples provided [here](./template.py)_
+
+3. One of the students has tried to apply the guideline for a given problem. But, the code does not produce the expected results. Check the code and without executing the code try to find the mistake.
 
 ```python
 # Ask the user for the name of item X.
@@ -383,3 +603,5 @@ total = price * quantity
 # Outputs
 print("To purchase", quantity, "units of", name, "you must pay", total, "euros.")
 ```
+
+The mistakes are that input() cannot have multiple arguments and that price and quantity are text instead of numbers, so they need to be converted using float() and int().

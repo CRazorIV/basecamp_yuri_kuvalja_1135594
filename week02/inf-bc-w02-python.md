@@ -167,7 +167,7 @@ else:
 
 5. Think of an useful situation where you need to check something with a if-statement within another if-statement (nested if-statements). Code it and write a comment to explain why it needs a nested if.
 
-A useful situation is entry to a concert: you have to be 18 or older **and** you need a ticket. The second question only makes sense once the first one is answered, and the message I want to show is different for each case.
+A useful situation is entry to a concert: you have to be 18 or older and you need a ticket. The second question only makes sense once the first one is answered, and the message I want to show is different for each case.
 
 ```python
 age = int(input("How old are you? "))
@@ -187,7 +187,45 @@ else:
 
 6. Finish all the exercises listed in **BRef-01-Chapter 04: Things to Do**.
 
-<!-- TODO Yuri: the Chapter 04 "Things to Do" exercises still need to be made and pasted in here. -->
+   **4.1** Choose a number between 1 and 10 and assign it to the variable `secret`. Then, select another number between 1 and 10 and assign it to the variable `guess`. Next, write the conditional tests (`if`, `else`, and `elif`) to print the string `'too low'` if `guess` is less than `secret`, `'too high'` if greater than `secret`, and `'just right'` if equal to `secret`.
+
+   ```python
+   secret = 7
+   guess = 5
+
+   # only one of the three branches can run, so elif and else are used
+   # instead of three separate if-statements
+   if guess < secret:
+       print("too low")
+   elif guess > secret:
+       print("too high")
+   else:
+       print("just right")
+   ```
+
+   With `secret = 7` and `guess = 5` this prints `too low`. If I change `guess` to `9` it prints `too high`, and with `guess = 7` it prints `just right`.
+
+   **4.2** Assign `True` or `False` to the variables `small` and `green`. Write some `if`/`else` statements to print which of these matches those choices: cherry, pea, watermelon, pumpkin.
+
+   ```python
+   small = True
+   green = False
+
+   # small and green together decide which of the four things it is,
+   # so the green check is nested inside the small check
+   if small:
+       if green:
+           print("pea")
+       else:
+           print("cherry")
+   else:
+       if green:
+           print("watermelon")
+       else:
+           print("pumpkin")
+   ```
+
+   The four combinations are: small and green is a pea, small and not green is a cherry, big and green is a watermelon, big and not green is a pumpkin. With `small = True` and `green = False` the program prints `cherry`.
 
 <hr>
 
@@ -325,14 +363,15 @@ Both functions only print, they do not return anything, so the return type is `N
 
 8. Provide your solutions to the exercises of **ORef-01: Functions**. The description of functions in **ORef-01: Functions** can be used as extra learning reference.
 
-<p>Helaas kan deze opdracht niet worden uitgevoerd omdat deze bron niet meer beschikbaar is.</p>
+<p>This resource does not exist anymore.</p>
 
 9. Design two exercises of your own. They should improve understanding topics of this step.
 
 **Exercise 9a: `return` is not the same as `print()`**
 
-> Write two functions that both double a number. The first one, `double_and_return`, gives the result back with `return`. The second one, `double_and_print`, shows the result with `print()` and returns nothing.
-> Call both functions with the number `5` and store each result in a variable. Print both variables and explain the difference. Then try to use the result of each function in a new calculation.
+Write two functions that both double a number. The first one, `double_and_return`, gives the result back with `return`. The second one, `double_and_print`, shows the result with `print()` and returns nothing.
+
+Call both functions with the number `5` and store each result in a variable. Print both variables and explain the difference. Then try to use the result of each function in a new calculation.
 
 ```python
 def double_and_return(number: int) -> int:
@@ -360,12 +399,13 @@ printed_value  = None
 20
 ```
 
-_Why this exercise helps:_ both functions look like they "do the same thing", because the number `10` appears on the screen either way. But `printed_value` is `None`, because `double_and_print` shows the value instead of giving it back. Only `returned_value` can be fed into another calculation. This makes visible that `print()` is output to the screen and `return` is output to the rest of the program.
+Why this exercise helps: both functions look like they "do the same thing", because the number `10` appears on the screen either way. But `printed_value` is `None`, because `double_and_print` shows the value instead of giving it back. Only `returned_value` can be fed into another calculation. This makes visible that `print()` is output to the screen and `return` is output to the rest of the program.
 
 **Exercise 9b: parameters, default values and keyword arguments**
 
-> Write a function `apply_discount` that takes a price and a discount percentage and returns the new price. Give the percentage a default value of 10, so the function can also be called with only a price. Write a second function `format_price` that takes an amount and returns it as a readable string.
-> Call `apply_discount` three ways: with only a price, with both values as positional arguments, and with both values as keyword arguments in reversed order. Print each result through `format_price`.
+Write a function `apply_discount` that takes a price and a discount percentage and returns the new price. Give the percentage a default value of 10, so the function can also be called with only a price. Write a second function `format_price` that takes an amount and returns it as a readable string.
+
+Call `apply_discount` three ways: with only a price, with both values as positional arguments, and with both values as keyword arguments in reversed order. Print each result through `format_price`.
 
 ```python
 def apply_discount(price: float, percentage: float = 10.0) -> float:
@@ -394,7 +434,7 @@ EUR 37.50
 EUR 25.00
 ```
 
-_Why this exercise helps:_ it shows that a parameter can have a default value, so an argument becomes optional. It also shows the difference between positional arguments, where the order decides everything, and keyword arguments, where the name decides. And because `format_price(apply_discount(...))` passes the returned value of one function straight into another, it shows that a `return` value is just a value you can keep using.
+Why this exercise helps: it shows that a parameter can have a default value, so an argument becomes optional. It also shows the difference between positional arguments, where the order decides everything, and keyword arguments, where the name decides. And because `format_price(apply_discount(...))` passes the returned value of one function straight into another, it shows that a `return` value is just a value you can keep using.
 
 10. Install _Visual Studio Code_ on your working machine. Implement and run a simple Python program of your choice.
     - It is important to learn how to create a new Python program, how to configure interpreter and how to run the program. Where do you see the results?
@@ -451,19 +491,19 @@ The results are returned in the terminal.
    _Solution 1_
 
    The arithmetic in this solution is actually correct. With the input `3141` the variables become `x = 3`, `x1 = 1`, `x2 = 4`, `x3 = 1` and the sum is `9`. The issues are:
-   1. **The output does not match the problem statement.** The program prints `Sum: 9`, but the required output is `3+1+4+1=9`. The individual digits have to be shown in the output, with `+` between them and `=` before the total.
-   2. **There is no check that the input really has four digits.** If the user enters `31`, then `x` and `x1` become `0` and the program silently gives a wrong looking answer instead of warning the user.
-   3. **The variable names say nothing.** `x`, `x1`, `x2` and `x3` do not explain that they are the thousands, hundreds, tens and units digit. This makes the code hard to follow.
+   1. The output does not match the problem statement. The program prints `Sum: 9`, but the required output is `3+1+4+1=9`. The individual digits have to be shown in the output, with `+` between them and `=` before the total.
+   2. There is no check that the input really has four digits. If the user enters `31`, then `x` and `x1` become `0` and the program silently gives a wrong looking answer instead of warning the user.
+   3. The variable names say nothing. `x`, `x1`, `x2` and `x3` do not explain that they are the thousands, hundreds, tens and units digit. This makes the code hard to follow.
 
    _Solution 2_
 
    This solution has a bigger problem, it never produces the required result at all:
    1. The sum is calculated but never printed. The variable `sum` is filled in correctly inside the loop, but the last line only prints `text`. The `=9` part of the output is simply missing.
-   2. **`text` is built without the `+` signs.** The line `text = text + numstr[i]` just glues the digits back together, so for the input `3141` it prints `3141` instead of `3+1+4+1`. The loop rebuilds the input instead of formatting it.
-   3. **`sum` overwrites a built-in function.** Python already has a function called `sum()`. Using it as a variable name shadows it, so it can no longer be used later in the program. A name like `total` is better.
+   2. `text` is built without the `+` signs. The line `text = text + numstr[i]` just glues the digits back together, so for the input `3141` it prints `3141` instead of `3+1+4+1`. The loop rebuilds the input instead of formatting it.
+   3. `sum` overwrites a built-in function.Python already has a function called `sum()`. Using it as a variable name shadows it, so it can no longer be used later in the program. A name like `total` is better.
    4. The program works for any number of digits, not only four.
 
-   Step-by-step execution \
+   Step-by-step execution
 
    Running solution 2 in the visualizer with the input `3141` confirms this: after the four rounds of the loop `sum` holds `9` and `text` holds `"3141"`, and then only `text` is printed. So the value `9` is calculated and then thrown away, which is exactly issue 1.
 

@@ -2,7 +2,6 @@
 
 **Introduction**: This document presents learning steps for Python 03. In Python 03, you will learn the basics of strings in Python and required programming structures to add repetition points to your programs. An iterative program is a flow of sequential instructions with repeating statements. By the end of Python 03, you will be able to implement a program where a user can have simple interactions: the user repeatedly enters simple input, the program calculats and prints the results.
 
-
 **Note:** Exercises of this learning path can be done using:
 
 1. Online Python Editor **OPyEditor**: The final program should be stored on your local machine.
@@ -15,7 +14,6 @@ The learning steps are designed based on these following references:
 - **BRef-01**: Book, Bill Lubanovic; "Introducing Python: Modern Computing in Simple Packages"; [Available here](https://www.oreilly.com/library/view/introducing-python-2nd/9781492051374/)
 - **BRef-02**: Book, Mark Lutz; **"Learning Python: Powerful Object-Oriented Programming"**; [Available here](https://www.oreilly.com/library/view/learning-python-6th/9781098171292/)
 - **OPyEditor**: Online Editor for Programming; "Online Python (with shell and file storing functionalities)"; [Available here](https://www.online-python.com/)
-
 
 ## Path:
 
@@ -32,7 +30,6 @@ After taking this step, you will be able to:
 
 #### What to Learn?
 
-
 1. Using **BRef-01: Chapter 05** and **BRef-02: Chapter 07** experiment and answer the following questions:
    1. What is string data type?
    2. Which Python built-in function can be used to convert a data type to string? Try some examples in Python shell.
@@ -40,20 +37,20 @@ After taking this step, you will be able to:
    4. How one can concatenate multiple strings? Make one string with your: First name, Last name, student number and group number.
    5. What would be the result of multiplying a number with a string? Try three examples. What if the number is zero?
    6. How can you extract specific character from a given string? How can you specify the first character? Last character? How can you get a slice if a string? Try with several examples in Python shell.
-   7. What are the functionality of functions: *len()*, *split()*, *join()*, *replace()*. Try two examples for each function in Python shell.
+   7. What are the functionality of functions: _len()_, _split()_, _join()_, _replace()_. Try two examples for each function in Python shell.
 
 #### Exercises:
 
 1. Ask the user to input a text. Print the length of the entered text.
-2. Ask the user to input a text. Replace the first character with a ```k``` and print the result.
+2. Ask the user to input a text. Replace the first character with a `k` and print the result.
 3. Make a variable with the text "this is a text". Remove all spaces from it. Print the result.
 4. Ask the user to input a text. Capitalize the complete input. Print the result.
-5. Ask the user to input a text. Remove all ```e``` characters from it. Print the result. Try to see what happens if the input doesn't contain an ```e```.
-6. Ask the user to input a text. Count how many times the input contains the character ```i```. Print the result.
-7. Ask the user to input two texts (two inputs). Print them together in one line using a ```f string```.
+5. Ask the user to input a text. Remove all `e` characters from it. Print the result. Try to see what happens if the input doesn't contain an `e`.
+6. Ask the user to input a text. Count how many times the input contains the character `i`. Print the result.
+7. Ask the user to input two texts (two inputs). Print them together in one line using a `f string`.
 <hr>
 
-### Step-02: Looping with *while*
+### Step-02: Looping with _while_
 
 #### Goals:
 
@@ -65,30 +62,33 @@ After taking this step, you will be able to:
 #### What to Learn?
 
 1. Using **BRef-01: Chapter 06** and **BRef-02: Chapter 13** answer and experiment the following questions:
-   1. A *while* loop consists of a condition and a body. Pick and example from **BRef-01: Chapter 06** and specify the condition and the body of the program.
-   2. Using *while* loop implement a program that prints a message (like *Hello*) for 10 times.
-   3. Using *while* loop implement a counter that counts down from 10 until 0. In each iteration, the program must print the value of the counter.
-   4. What is *break* statement?
-   5. Implement a program that repeatedly asks the user to enter a character as input until the user enters *q*. If the user enters *q* the program will stop.
+   1. A _while_ loop consists of a condition and a body. Pick and example from **BRef-01: Chapter 06** and specify the condition and the body of the program.
+   2. Using _while_ loop implement a program that prints a message (like _Hello_) for 10 times.
+   3. Using _while_ loop implement a counter that counts down from 10 until 0. In each iteration, the program must print the value of the counter.
+   4. What is _break_ statement?
+   5. Implement a program that repeatedly asks the user to enter a character as input until the user enters _q_. If the user enters _q_ the program will stop.
 
 #### Exercises:
 
-1. Print the numbers 1 to 42 using a ```while``` loop.
-2. Print all odd numbers between 1 to 100 by using a ```while``` loop.
-3. Print the numbers from 10 to -10 using a ```while``` loop.
-4. Ask the user to input a text. Print each character of the input on a new line using a ```while``` loop.
-5. Ask the user to input a text. Print each character of the input that is the character ```e``` or ```a``` on a separate line.
+1. Print the numbers 1 to 42 using a `while` loop.
+2. Print all odd numbers between 1 to 100 by using a `while` loop.
+3. Print the numbers from 10 to -10 using a `while` loop.
+4. Ask the user to input a text. Print each character of the input on a new line using a `while` loop.
+5. Ask the user to input a text. Print each character of the input that is the character `e` or `a` on a separate line.
 6. What will be the output of the given code?
 
- ```python
+```python
 i = 20
 while i < 42:
 	i = i * 2
 	print(i - 1)
 ```
+
+...
+
 7. What will be the output of the given code?
 
- ```python
+```python
 i = -4
 end = -33
 while i > end:
@@ -96,9 +96,11 @@ while i > end:
 	print(i * 2)
 ```
 
+...
+
 8. If we swap the last two lines in the previous exercise we get a different output. Why is this?
 
- ```python
+```python
 i = -4
 end = -33
 while i > end:
@@ -106,9 +108,11 @@ while i > end:
 	i = i -4
 ```
 
+...
+
 <hr>
 
-### Step-03: Looping with *for ... in*
+### Step-03: Looping with _for ... in_
 
 #### Goals:
 
@@ -120,70 +124,96 @@ After taking this step, you will be able to:
 #### What to Learn?
 
 1. Using **BRef-01: Chapter 06** and **BRef-02: Chapter 13** answer and experiment the following questions:
-   1. What are the main elements of a *for* loop?
-   2. Using *for* loop implement a program that prints a message (like *Hello*) for 10 times.
-   3. Using *for* loop implement a counter that counts down from 10 until 0. In each iteration, the program must print the value of the counter.
-   4. Can you use a *break* statement within a *for* loop? Build a simple example.
-   5. Implement a *for* loop that prints characters of a given string.
-   6. Implement a *for* loop that given a string, prints characters positioned in odd indeces, i.e. ```1,3,5,7,...```.
+   1. What are the main elements of a _for_ loop?
+   2. Using _for_ loop implement a program that prints a message (like _Hello_) for 10 times.
+   3. Using _for_ loop implement a counter that counts down from 10 until 0. In each iteration, the program must print the value of the counter.
+   4. Can you use a _break_ statement within a _for_ loop? Build a simple example.
+   5. Implement a _for_ loop that prints characters of a given string.
+   6. Implement a _for_ loop that given a string, prints characters positioned in odd indeces, i.e. `1,3,5,7,...`.
 
 #### Exercises:
 
-1. Print the numbers 1 to 42 using a ```for``` loop.
-2. Print all uneven numbers between 1 to 100 by using a ```for``` loop.
-3. Ask the user to input a text. Print each character of the input on a new line using a ```for``` loop.
-4. The ```for``` and ```while``` are considered 'loops'. Explain in your own words what a loop is.
-5. Describe the difference between the ```for``` and ```while``` in your own words.
+1. Print the numbers 1 to 42 using a `for` loop.
 
-11. Practice the exercises listed in **BRef-01-Chapter 06: Things to Do**:
-	- **6.1**, **6.2** and **6.3**.
+```python
+for i in range(1, 43):
+    print(i)
+```
+
+2. Print all uneven numbers between 1 to 100 by using a `for` loop.
+
+```python
+for i in range(1, 101):
+    if not i % 2 == 0: # Invert de logica om te checken op even met modulo
+        print(i)
+```
+
+3. Ask the user to input a text. Print each character of the input on a new line using a `for` loop.
+
+```python
+user_string = input("Enter a string: ")
+
+for char in user_string:
+    print(char)
+```
+
+4. The `for` and `while` are considered 'loops'. Explain in your own words what a loop is.
+
+A loop is a structure that repeats code based on a set of conditions.
+
+5. Describe the difference between the `for` and `while` in your own words.
+
+A WHILE loop repeats code as long as a condition is TRUE this is used for when you don't know how many iterations you need. A FOR loop is to repeat code a specific number of times.
+
+6. Practice the exercises listed in **BRef-01-Chapter 06: Things to Do**:
+   - **6.1**, **6.2** and **6.3**.
 
 ## Code Analysis
 
 1. For each of the following given codes:
-	- Without executing the code try to read the code and write down what will be the output.
-	- Use the [Python Code Visualizer](https://cscircles.cemc.uwaterloo.ca/visualize) and execute the code step-by-step. Observe how the variables and statements are executing in each iteration of the loops.
+   - Without executing the code try to read the code and write down what will be the output.
+   - Use the [Python Code Visualizer](https://cscircles.cemc.uwaterloo.ca/visualize) and execute the code step-by-step. Observe how the variables and statements are executing in each iteration of the loops.
 
- ```python
+```python
 # Code 1
 i = 7
 for number in range(1, i + i):
 	print(number)
 ```
 
- ```python
+```python
 # Code 2
 i = 1
 j = 10
 for number in range(i, j):
-    if number > 5:
-        print(number)
-    else:
-        print('Hello')
+   if number > 5:
+       print(number)
+   else:
+       print('Hello')
 ```
 
- ```python
+```python
 # Code 3
 sentence = "I just came to say hello!"
 count = 0
 for letter in sentence:
-    if letter == " ":
-        count = count + 1
-    elif letter == "a":
-        count = count - 1
+   if letter == " ":
+       count = count + 1
+   elif letter == "a":
+       count = count - 1
 print(count)
 ```
 
- ```python
- # Code 4
- sentence = "I just came to say hello!"
- for i in range(0, len(sentence)):
- 	print(sentence[i])
+```python
+# Code 4
+sentence = "I just came to say hello!"
+for i in range(0, len(sentence)):
+	print(sentence[i])
 ```
 
- ```python
+```python
 # Code 5
- sentence = "I just came to say hello!"
- for c in sentence:
- 	print(c)
+sentence = "I just came to say hello!"
+for c in sentence:
+	print(c)
 ```

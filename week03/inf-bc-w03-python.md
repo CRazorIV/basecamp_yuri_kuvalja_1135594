@@ -48,6 +48,42 @@ After taking this step, you will be able to:
 5. Ask the user to input a text. Remove all `e` characters from it. Print the result. Try to see what happens if the input doesn't contain an `e`.
 6. Ask the user to input a text. Count how many times the input contains the character `i`. Print the result.
 7. Ask the user to input two texts (two inputs). Print them together in one line using a `f string`.
+
+```python
+# Step-01: Strings
+
+# 1. Ask the user to input a text. Print the length of the entered text.
+text = input("Enter a text: ")
+print(len(text))
+
+# 2. Ask the user to input a text. Replace the first character with a `k` and print the result.
+text = input("Enter a text: ")
+print("k" + text[1:])
+
+# 3. Make a variable with the text "this is a text". Remove all spaces from it. Print the result.
+text = "this is a text"
+print(text.replace(" ", ""))
+
+# 4. Ask the user to input a text. Capitalize the complete input. Print the result.
+text = input("Enter a text: ")
+print(text.upper())
+
+# 5. Ask the user to input a text. Remove all `e` characters from it. Print the result.
+#    Without an `e` in the input, replace() simply finds nothing and returns the text unchanged.
+text = input("Enter a text: ")
+print(text.replace("e", ""))
+
+# 6. Ask the user to input a text. Count how many times the input contains the character `i`.
+text = input("Enter a text: ")
+print(text.count("i"))
+
+# 7. Ask the user to input two texts (two inputs). Print them together in one line using an f-string.
+first = input("Enter a text: ")
+second = input("Enter another text: ")
+print(f"{first} {second}")
+
+```
+
 <hr>
 
 ### Step-02: Looping with _while_
@@ -71,10 +107,56 @@ After taking this step, you will be able to:
 #### Exercises:
 
 1. Print the numbers 1 to 42 using a `while` loop.
+
+```python
+number = 1
+while number <= 42:
+    print(number)
+    number = number + 1
+```
+
 2. Print all odd numbers between 1 to 100 by using a `while` loop.
+
+```python
+number = 1
+while number <= 100:
+    if number % 2 != 0:
+        print(number)
+    number = number + 1
+```
+
 3. Print the numbers from 10 to -10 using a `while` loop.
+
+```python
+number = 10
+while number >= -10:
+    print(number)
+    number = number - 1
+```
+
 4. Ask the user to input a text. Print each character of the input on a new line using a `while` loop.
+
+```python
+text = input("Enter a text: ")
+
+index = 0
+while index < len(text):
+    print(text[index])
+    index = index + 1
+```
+
 5. Ask the user to input a text. Print each character of the input that is the character `e` or `a` on a separate line.
+
+```python
+text = input("Enter a text: ")
+
+index = 0
+while index < len(text):
+    if text[index] == "e" or text[index] == "a":
+        print(text[index])
+    index = index + 1
+```
+
 6. What will be the output of the given code?
 
 ```python
@@ -84,7 +166,12 @@ while i < 42:
 	print(i - 1)
 ```
 
-...
+```
+39
+79
+```
+
+Two lines. `i` is doubled before it is printed: 20 -> 40 prints 39, 40 -> 80 prints 79, and then 80 is no longer smaller than 42 so the loop stops.
 
 7. What will be the output of the given code?
 
@@ -96,7 +183,18 @@ while i > end:
 	print(i * 2)
 ```
 
-...
+```
+-16
+-24
+-32
+-40
+-48
+-56
+-64
+-72
+```
+
+Eight lines. `i` is lowered by 4 first and then printed doubled, so the first line is -8 \* 2 = -16. The last check that passes is -32 > -33, which lowers `i` to -36 and prints -72.
 
 8. If we swap the last two lines in the previous exercise we get a different output. Why is this?
 
@@ -108,7 +206,7 @@ while i > end:
 	i = i -4
 ```
 
-...
+printing happens before `i` is changed, so every line shows the value of `i` from the start of that iteration instead of the lowered one. The output is shifted one step: it starts at -4 _ 2 = -8 and ends at -32 _ 2 = -64, while the first version started at -16 and ended at -72. The loop still runs eight times; only the moment of printing moved.
 
 <hr>
 
@@ -144,7 +242,7 @@ for i in range(1, 43):
 
 ```python
 for i in range(1, 101):
-    if not i % 2 == 0: # Invert de logica om te checken op even met modulo
+    if not i % 2 == 0:
         print(i)
 ```
 
@@ -165,8 +263,54 @@ A loop is a structure that repeats code based on a set of conditions.
 
 A WHILE loop repeats code as long as a condition is TRUE this is used for when you don't know how many iterations you need. A FOR loop is to repeat code a specific number of times.
 
-6. Practice the exercises listed in **BRef-01-Chapter 06: Things to Do**:
+6. Practice the exercises listed in **BRef-01-Chapter 06: Things to Do**
    - **6.1**, **6.2** and **6.3**.
+
+```python
+# 6.1 Use a for loop to print the values of the list [3, 2, 1, 0].
+
+for value in [3, 2, 1, 0]:
+    print(value)
+
+# 6.2 Assign the value 7 to the variable guess_me, and the value 1 to the
+# variable number. Write a while loop that compares number with guess_me.
+# Print 'too low' if number is less than guess me. If number equals
+# guess_me, print 'found it!' and then exit the loop. If number is greater
+# than guess_me, print 'oops' and then exit the loop. Increment number at
+# the end of the loop.
+
+guess_me = 7
+number = 1
+
+while True:
+    if number < guess_me:
+        print("too low")
+    elif number == guess_me:
+        print("found it!")
+        break
+    else:
+        print("oops")
+        break
+    number = number + 1
+
+# 6.3 Assign the value 5 to the variable guess_me. Use a for loop to iterate a
+# variable called number over range(10). If number is less than guess_me,
+# print 'too low'. If it equals guess_me, print found it! and then break out
+# of the for loop. If number is greater than guess_me, print 'oops' and then
+# exit the loop.
+
+guess_me = 5
+
+for number in range(10):
+    if number < guess_me:
+        print("too low")
+    elif number == guess_me:
+        print("found it!")
+        break
+    else:
+        print("oops")
+        break
+```
 
 ## Code Analysis
 
@@ -181,6 +325,8 @@ for number in range(1, i + i):
 	print(number)
 ```
 
+The numbers 1 up to and including 13, each on its own line. `i + i` is 14, and `range(1, 14)` stops _before_ 14, so 14 itself is never printed.
+
 ```python
 # Code 2
 i = 1
@@ -190,6 +336,20 @@ for number in range(i, j):
        print(number)
    else:
        print('Hello')
+```
+
+`range(1, 10)` gives 1 to 9. The first five numbers are not greater than 5, so they print `Hello`; from 6 on the number itself is printed.
+
+```
+Hello
+Hello
+Hello
+Hello
+Hello
+6
+7
+8
+9
 ```
 
 ```python
@@ -204,6 +364,8 @@ for letter in sentence:
 print(count)
 ```
 
+`3`. The loop looks at every character of the sentence: the 5 spaces each add 1, and the 2 letters `a` (in "came" and "say") each subtract 1, so 5 - 2 = 3. Because `print(count)` is outside the loop, it only shows the final total once instead of after every character.
+
 ```python
 # Code 4
 sentence = "I just came to say hello!"
@@ -211,9 +373,13 @@ for i in range(0, len(sentence)):
 	print(sentence[i])
 ```
 
+Every character of the sentence on its own line: `I`, then a line with just a space, then `j`, `u`, `s`, `t`, and so on down to `!`. `range(0, len(sentence))` counts the positions 0 to 24, and `sentence[i]` picks the character at each position.
+
 ```python
 # Code 5
 sentence = "I just came to say hello!"
 for c in sentence:
 	print(c)
 ```
+
+Exactly the same output as Code 4. Looping over a string directly hands you one character per iteration, so you do not need the index at all this is the shorter way to write Code 4.

@@ -53,7 +53,6 @@ After taking this step, you will be able to:
 
 #### What to Learn?
 
-
 1. Using BaseCamp Tutorial [Available here](./bc-w05-python-tutorial.md) and **BRef-01: Chapter 07** answer and experiment the following questions:
    1. What is a list in Python and how is it defined?
    2. What is the result of *split()* on a string?
@@ -96,6 +95,98 @@ After taking this step, you will be able to:
 7. Write a program that takes any two lists L and M of the same size and adds their elements together to form a new list N whose elements are sums of the corresponding elements in L and M. For instance, if ```L=[3,1,4]``` and ```M=[1,5,9]```, then N should equal ```[4,6,13]```.
 8. Design two exercises of your own. They should improve understanding topics of this step.
 
+```python
+import random
+
+# Exercise 1: max and min of scores
+scores = [42, 17, 88, 3, 56, 99, 21]
+print("Exercise 1")
+print("Maximum:", max(scores))
+print("Minimum:", min(scores))
+
+# Exercise 2: two largest and two smallest elements
+print("\nExercise 2")
+ordered = sorted(scores)
+print("Two smallest:", ordered[0], ordered[1])
+print("Two largest:", ordered[-1], ordered[-2])
+
+# Exercise 3: operations on a user-entered list of integers
+print("\nExercise 3")
+raw = input("Enter integers separated by spaces: ")
+numbers = [int(x) for x in raw.split()]
+
+print("Total number of items:", len(numbers))
+print("Last item:", numbers[-1])
+print("Reversed:", numbers[::-1])
+print("Contains a 5?", "Yes" if 5 in numbers else "No")
+print("Number of fives:", numbers.count(5))
+
+trimmed = sorted(numbers[1:-1])
+print("First and last removed, rest sorted:", trimmed)
+print("Count of integers less than 5:", len([n for n in numbers if n < 5]))
+
+# Exercise 4: 20 random numbers between 1 and 100
+print("\nExercise 4")
+rand_list = [random.randint(1, 100) for _ in range(20)]
+print("List:", rand_list)
+print("Average:", sum(rand_list) / len(rand_list))
+print("Largest:", max(rand_list), "Smallest:", min(rand_list))
+unique_sorted = sorted(set(rand_list))
+print("Second largest:", unique_sorted[-2], "Second smallest:", unique_sorted[1])
+print("Even numbers count:", len([n for n in rand_list if n % 2 == 0]))
+
+# Exercise 5: step-by-step list manipulation
+print("\nExercise 5")
+lst = [8, 9, 10]
+lst[1] = 17                       # set index 1 to 17
+lst.extend([4, 5, 6])             # add 4, 5, 6 to the end
+lst.pop(0)                        # remove the first entry
+lst.sort()                        # sort the list
+lst = lst * 2                     # double the list
+lst.insert(3, 25)                 # insert 25 at index 3
+print(lst)
+print("Matches expected:", lst == [4, 5, 6, 25, 10, 17, 4, 5, 6, 10, 17])
+
+# Exercise 6: build lists using loops
+print("\nExercise 6")
+zero_to_49 = [i for i in range(50)]
+print(zero_to_49)
+
+squares = [i ** 2 for i in range(1, 51)]
+print(squares)
+
+letters = [chr(ord('a') + i) * (i + 1) for i in range(26)]
+print(letters)
+
+# Exercise 7: element-wise sum of two equal-sized lists
+print("\nExercise 7")
+L = [3, 1, 4]
+M = [1, 5, 9]
+N = [L[i] + M[i] for i in range(len(L))]
+print("N =", N)
+
+# Exercise 8: two exercises of my own
+print("\nExercise 8")
+
+# 8a) Remove all duplicates from a list while keeping the original order.
+def remove_duplicates(items):
+    seen = []
+    for item in items:
+        if item not in seen:
+            seen.append(item)
+    return seen
+
+print("Without duplicates:", remove_duplicates([1, 2, 2, 3, 1, 4, 3]))
+
+# 8b) Rotate a list to the right by k positions.
+def rotate_right(items, k):
+    if not items:
+        return items
+    k = k % len(items)
+    return items[-k:] + items[:-k]
+
+print("Rotated by 2:", rotate_right([1, 2, 3, 4, 5], 2))
+```
 
 <hr>
 
@@ -118,25 +209,73 @@ After taking this step, you will be able to:
 #### Exercises:
 
 1. Describe in your own words what `*args` and `**kwargs` do.
+
+*args allows a unspecified number of positional arguments given to a function. And **kwargs allows a unspecified number of keyword arguments given to a function. 
+
 2. Create a function that takes an `*args` of numbers as argument, which calculates the sum of all numbers and returns the result. Call the function and print the returned value.
+
+```python
+def sum_numbers(*numbers):
+    """
+    Function to sum up all the numbers of values in a tuple.
+    """
+    total = 0
+
+    for i in range(len(numbers)):
+        total += numbers[i]
+
+    return total
+
+
+print(sum_numbers(40,20,10,10))
+```
+
 3. Complete the given code below.
 
  ```python
 def count_passes(**kwargs):
     count = 0
-    #Complete this function to count the number of passes
-
+    
+    for value in kwargs.values():
+        if value == "Pass":
+            count += 1
     return count
-#
+
 result = count_passes(math="Fail", science="Fail", history="Pass", english="Pass")
 print(result)
 ```
 
-
 4. Design two exercises of your own. They should improve understanding topics of this step.
+
+**Exercise A:** Create a function `build_profile` that takes a first name and last name as positional arguments, and any number of keyword arguments (`**kwargs`) to represent additional profile fields. The function should return a dictionary containing all the information. Give default values to first and last name so the function can be called without them.
+
+```python
+def build_profile(first_name="Unknown", last_name="Unknown", **kwargs):
+    """Build a dictionary containing a user profile."""
+    profile = {"first_name": first_name, "last_name": last_name}
+    for key, value in kwargs.items():
+        profile[key] = value
+    return profile
+
+print(build_profile("Yuri", "K", age=25, city="Rotterdam"))
+print(build_profile(hobby="coding"))
+```
+
+**Exercise B:** Create a function `describe_items` that takes `*args` for item names and `**kwargs` for item descriptions, then prints each item with its description if available, or "No description" otherwise. Include a docstring explaining the function.
+
+```python
+def describe_items(*args, **kwargs):
+    """Print each item with its description from kwargs, or 'No description' if not provided."""
+    for item in args:
+        description = kwargs.get(item, "No description")
+        print(f"{item}: {description}")
+
+describe_items("apple", "banana", "cherry", apple="A red fruit", cherry="Small and sweet")
+```
 
 5. **Extra:** Provide your solutions to the exercises of **ORef-01: Functions**
 
+<!-- Niet repliceerbaar -->
 
 <hr>
 

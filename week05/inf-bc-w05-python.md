@@ -34,11 +34,63 @@ After taking this step, you will be able to:
 
 #### Exercises:
 1. You can create a tuple with mixed types in it, for example texts and numbers. Can you think of a advantage and a disadvantage of doing this? Implement your example.
+
+Using a tuple with mixed values is useful because that means we don't have to define tuples based on types when we can just use the same tuple. Also I can think of another reason which would be that otherwise we could not include nested collections within tuples without mixed types. 
+
+Say my algorithm defines a process which outputs a list that still needs to mutate but I eventually need to lock in which collections are part of the result. I can nest that list into a tuple so the reference cannot be reassigned to a different object. However, the list itself remains mutable its contents can still be changed. A disadvantage of mixed types is that it makes code harder to read, since you have to remember which index holds what type.
+
 2. Create a tuple with three numbers in it. Unpack the tuple into three different variables. Print the last one.
+
+```python
+numbers_tuple: tuple[int] = (1,2,3) 
+(one, two, three) = numbers_tuple
+print(three)
+```
 3. Create a tuple with two numbers in it, create a second tuple with two texts in it. Add them together into a new tuple. Print the new tuple.
+
+```python
+tuple_1: tuple = ("a", "b", "c")
+tuple_2: tuple = (1,2,3)
+combined_tuples: tuple = tuple_1 + tuple_2
+print(combined_tuples)
+```
+
 4. Create a tuple with three numbers in it. Use a for loop to iterate over each value. Multiply each value by 2 and print each result.
+
+```python
+numbers: tuple = (3, 7, 5)
+for num in numbers:
+    print(num * 2)
+```
+
 5. Create a function that returns a tuple containing three texts. Call the function. Unpack the tuple into variables. Print the variables.
+
+```python
+def three_words() -> tuple:
+    return ("hello", "world", "python")
+
+(a, b, c) = three_words()
+print(a, b, c)
+```
 6. Design two exercises of your own. They should improve understanding topics of this step.
+
+**Exercise 1:** Create a tuple of five city names. Use a for loop to print only the cities that have more than 5 letters.
+
+```python
+cities: tuple = ("Amsterdam", "Rome", "Berlin", "Tokyo", "Rotterdam")
+for city in cities:
+    if len(city) > 5:
+        print(city)
+```
+
+**Exercise 2:** Create two tuples with three numbers each. Use a loop to print the sum of matching pairs (first + first, second + second, etc.).
+
+```python
+tuple_a: tuple = (10, 20, 30)
+tuple_b: tuple = (5, 15, 25)
+for i in range(len(tuple_a)):
+    print(tuple_a[i] + tuple_b[i])
+```
 
 <hr>
 
@@ -100,18 +152,15 @@ import random
 
 # Exercise 1: max and min of scores
 scores = [42, 17, 88, 3, 56, 99, 21]
-print("Exercise 1")
 print("Maximum:", max(scores))
 print("Minimum:", min(scores))
 
 # Exercise 2: two largest and two smallest elements
-print("\nExercise 2")
 ordered = sorted(scores)
 print("Two smallest:", ordered[0], ordered[1])
 print("Two largest:", ordered[-1], ordered[-2])
 
 # Exercise 3: operations on a user-entered list of integers
-print("\nExercise 3")
 raw = input("Enter integers separated by spaces: ")
 numbers = [int(x) for x in raw.split()]
 
@@ -126,7 +175,6 @@ print("First and last removed, rest sorted:", trimmed)
 print("Count of integers less than 5:", len([n for n in numbers if n < 5]))
 
 # Exercise 4: 20 random numbers between 1 and 100
-print("\nExercise 4")
 rand_list = [random.randint(1, 100) for _ in range(20)]
 print("List:", rand_list)
 print("Average:", sum(rand_list) / len(rand_list))
@@ -136,7 +184,6 @@ print("Second largest:", unique_sorted[-2], "Second smallest:", unique_sorted[1]
 print("Even numbers count:", len([n for n in rand_list if n % 2 == 0]))
 
 # Exercise 5: step-by-step list manipulation
-print("\nExercise 5")
 lst = [8, 9, 10]
 lst[1] = 17                       # set index 1 to 17
 lst.extend([4, 5, 6])             # add 4, 5, 6 to the end
@@ -148,7 +195,6 @@ print(lst)
 print("Matches expected:", lst == [4, 5, 6, 25, 10, 17, 4, 5, 6, 10, 17])
 
 # Exercise 6: build lists using loops
-print("\nExercise 6")
 zero_to_49 = [i for i in range(50)]
 print(zero_to_49)
 
@@ -166,7 +212,6 @@ N = [L[i] + M[i] for i in range(len(L))]
 print("N =", N)
 
 # Exercise 8: two exercises of my own
-print("\nExercise 8")
 
 # 8a) Remove all duplicates from a list while keeping the original order.
 def remove_duplicates(items):

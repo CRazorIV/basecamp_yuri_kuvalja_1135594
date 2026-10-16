@@ -270,7 +270,9 @@ print(odd_list)
 
 ```python
 def am_i_sorted(numberlist):
-    # write the code
+    compare = lambda a, b: a <= b
+    return all(compare(numberlist[i], numberlist[i + 1]) for i in range(len(numberlist) - 1))
+
 result = am_i_sorted([1,2,5,6,8,17])
 print(result) # True
 result = am_i_sorted([1,2,99,6,8,17])
@@ -279,9 +281,30 @@ print(result) # False
 
 4. Create a lambda that takes two arguments and returns a Tuple containing those two values. 
 
-
+```python
+to_tuple = lambda a, b: (a, b)
+print(to_tuple(3, 7))       # (3, 7)
+print(to_tuple("hi", True)) # ('hi', True)
+```
 
 5. Design two exercises of your own. They should improve understanding topics of this step.
+
+**Exercise A:** Create a list of names and use a lambda with `sorted()` to sort them by the length of each name.
+
+```python
+names = ["Alice", "Bob", "Charlotte", "Ed", "Francisco"]
+sorted_names = sorted(names, key=lambda name: len(name))
+print(sorted_names)  # ['Ed', 'Bob', 'Alice', 'Charlotte', 'Francisco']
+```
+
+**Exercise B:** Create a lambda that takes a number and returns a string saying whether it is positive, negative, or zero. Use it on a list of numbers with `map()`.
+
+```python
+classify = lambda n: "positive" if n > 0 else ("negative" if n < 0 else "zero")
+numbers = [-5, 0, 3, -1, 7]
+results = list(map(classify, numbers))
+print(results)  # ['negative', 'zero', 'positive', 'negative', 'positive']
+```
 
 
 <hr>

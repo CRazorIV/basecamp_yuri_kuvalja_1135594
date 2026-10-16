@@ -40,18 +40,85 @@ After taking this step, you will be able to interpret and implement Python progr
 #### Exercises:
 
 1. Describe in your own words the difference between a `dictionary` and a `tuple`.
+
+A dictionary is a collection of key-value pairs where each key is unique and maps to a value. You can look up, add, change, and remove items by their key. A tuple is an ordered, immutable sequence of values accessed by index. The main differences: dictionaries are mutable and use keys for access, while tuples are immutable and use numeric indices.
+
 2. Create a new dictionary containing a key named `FirstName` with the value `Larry`, a key named `LastName` with the value `Page`. Print the last value from the dictionary.
+
+```python
+person = {"FirstName": "Larry", "LastName": "Page"}
+last_value = list(person.values())[-1]
+print(last_value)
+```
+
 3. Create a dictionary with the following pairs `"brand": "Ford", "model": "Mustang", "year": 1964`.
 	- Print all the values from the dictionary.
 	- Print all the keys from the dictionary.
 	- Print the length of the dictionary.
 	- Add `"color": "Red"` and remove the pair with key = `"year"`. Print keys and values separately.
 
+```python
+car = {"brand": "Ford", "model": "Mustang", "year": 1964}
+
+print("Values:", list(car.values()))
+print("Keys:", list(car.keys()))
+print("Length:", len(car))
+
+car["color"] = "Red"
+del car["year"]
+
+print("Keys:", list(car.keys()))
+print("Values:", list(car.values()))
+```
+
 4. Modify the code from the previous exercise so each value becomes a `tuple` containing two random numbers.
+
+```python
+import random
+
+car = {"brand": "Ford", "model": "Mustang", "year": 1964}
+
+for key in car:
+    car[key] = (random.randint(1, 100), random.randint(1, 100))
+
+print(car)
+```
 
 5. Provide your solutions to the exercises of **ORef-01: Dictionary**.
 
 6. Design two exercises of your own. They should improve understanding topics of this step.
+
+**Exercise A:** Create a dictionary that maps student names to their grades (as a list). Write code that iterates over the dictionary and prints only students who have an average grade above 7.
+
+```python
+students = {
+    "Alice": [8, 7, 9],
+    "Bob": [5, 6, 4],
+    "Charlie": [7, 8, 8],
+    "Diana": [6, 5, 7]
+}
+
+for name, grades in students.items():
+    average = sum(grades) / len(grades)
+    if average > 7:
+        print(f"{name}: average = {average:.1f}")
+```
+
+**Exercise B:** Create two dictionaries representing inventories of two shops. Merge them into one dictionary where, if both shops have the same item, the quantities are added together.
+
+```python
+shop1 = {"apples": 10, "bananas": 5, "oranges": 8}
+shop2 = {"bananas": 3, "grapes": 12, "apples": 7}
+
+merged = dict(shop1)
+for item, quantity in shop2.items():
+    if item in merged:
+        merged[item] += quantity
+    else:
+        merged[item] = quantity
+
+print(merged)
+```
 
 7. If you don't have an IDE yet, install an IDE on your working machine. Implement and run a simple Python program of your choice.
 	- It is important to learn how to create a new Python program, how to configure interpreter and how to run the program. Where do you see the results?
@@ -86,12 +153,71 @@ After taking this step, you will be able to interpret and implement Python progr
 #### Exercises:
 
 1. Describe in your own words the difference between a `set` and a `tuple`.
+
+A set is a unordered collection of items meant as a sort of storage and cannot contain duplicate elements and a tuple is a inmmutable collection meant for storing data that should not mutate. (constants). 
+
 2. Describe in your own words the difference between a `set` and a `list`.
+
+A set is a unordered collection and a list is a ordered collection.
+
 3. Create a set with and fill it with some values you can think of yourself. Print the length and the last value from the set.
+
+```python
+# Sets do not support indexing so we first convert it to a list. 
+set1 = {"Yuri", "Kuvalja", 19, "Software Developer", True, ("Motivated")}
+print(len(set1))
+print(list(set1).pop())
+```
+
 3. Create a function which takes a `dictionary` as argument and returns a `set` created from the values of the given `dictionary`. Call the function and print all values from the returned set.
+
+```python   
+def values_to_set(dictionary: dict) -> set:
+    return set(dictionary.values())
+
+my_dict = {"a": 1, "b": 2, "c": 1, "d": 3}
+result = values_to_set(my_dict)
+
+for value in result:
+    print(value)
+```
+
 4. Create a `set` containing 5 letters `x,y,q,z,u`. Ask the user the input a letter. Check with `if` statement if the given letter is inside the `set`, print `yes` or `no`.
 
+```python
+set1: set = {"x","y","q","z","u"} 
+user_input: str = input("Enter a letter: ")
+print("Yes" if user_input in set1 else "No")
+```
+
 5. Design two exercises of your own. They should improve understanding topics of this step.
+
+**Exercise A:** Given two sets of student names, find which students are in both classes (intersection), which are in either class (union), and which are only in class 1 (difference).
+
+```python
+class1 = {"Alice", "Bob", "Charlie", "Diana"}
+class2 = {"Charlie", "Diana", "Eve", "Frank"}
+
+print("In both:", class1 & class2)
+print("In either:", class1 | class2)
+print("Only in class 1:", class1 - class2)
+```
+
+**Exercise B:** Write a function that takes a list and returns a set of only the elements that appear more than once (the duplicates).
+
+```python
+def find_duplicates(items: list) -> set:
+    seen = set()
+    duplicates = set()
+    for item in items:
+        if item in seen:
+            duplicates.add(item)
+        else:
+            seen.add(item)
+    return duplicates
+
+print(find_duplicates([1, 2, 3, 2, 4, 5, 1, 6]))
+```
 
 
 ### Step-03: Functions (more).
@@ -114,7 +240,7 @@ After taking this step, you will be able to interpret and implement Python progr
 1. Complete the given code by creating a lambda that checks if a given number is even.
 
 ```python
-even = #your lambda here
+even = lambda x : x % 2 == 0 
 print(even(4))
 print(even(13))
 ```
@@ -122,23 +248,37 @@ print(even(13))
 2. Create a code snippet that splits up a list into two new lists. Depending on if the number in the list is even or odd. Accomplish this with using a lambda and knowledge from the earlier weeks. 
 - For example: Original list of integers:
 `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
-New list with only the even numbers:
+New list with only the even numbers:    
 `[2, 4, 6, 8, 10]`.
 New list with the odd numbers:
 `[1, 3, 5, 7, 9]`
+
+```python
+unordered_list: list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Function composition
+check_even_logic: any = lambda a : a % 2 == 0 
+check_odd_logic: any = lambda a : a % 2 != 0
+even_list: list = list(filter(check_even_logic, unordered_list))
+odd_list: list = list(filter(check_odd_logic, unordered_list))
+
+print(even_list)
+print(odd_list)
+```
 
 3. Complete the function that checks if a given list is sorted or not, use at least one lambda within the function.
 
 ```python
 def am_i_sorted(numberlist):
-    #write the code
+    # write the code
 result = am_i_sorted([1,2,5,6,8,17])
-print(result) #True
+print(result) # True
 result = am_i_sorted([1,2,99,6,8,17])
-print(result) #False
+print(result) # False
 ```
 
 4. Create a lambda that takes two arguments and returns a Tuple containing those two values. 
+
 
 
 5. Design two exercises of your own. They should improve understanding topics of this step.

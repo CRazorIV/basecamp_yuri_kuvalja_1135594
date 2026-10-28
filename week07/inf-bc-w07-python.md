@@ -100,13 +100,42 @@ After taking this step, you will be able to:
 
 1. The method `list.sort()` sorts a list ascending. Look up how to sort descending and try it.
 
-2. Create a list containing at least three `tuples` containing some numbers. Print the last item of each tuple by looping through the list.
+`list.sort(reverse=true)`
 
-3. Complete the function that returns a list containing all the values from all tuples in the given list.
+3. Create a list containing at least three `tuples` containing some numbers. Print the last item of each tuple by looping through the list.
+
+```python
+my_tupled_list: list[tuple[int]] = [(1,2,3),(4,5,6),(7,8,9)]
+
+def get_last_tuple_element(l1: list) -> list:
+
+    values_list: list = []
+    
+    for items in l1:
+        values_list.append(items[-1])
+			
+    return values_list
+
+
+print(get_last_tuple_element(my_tupled_list))
+
+assert get_last_tuple_element(my_tupled_list) == [3,6,9]
+
+
+```
+
+5. Complete the function that returns a list containing all the values from all tuples in the given list.
 
 ```python
 def create_list_from_tuples(a):
-    #write the code
+    
+    values_list: list = []
+
+    for i in a:
+        for items in i:
+            values_list.append(items)
+			
+    return values_list
 
 l = [(1,5,4),(1,2),(8,5,19,0)]
 print(create_list_from_tuples(l))
